@@ -27,8 +27,5 @@ public class SalleService {
         return repository.findAll();
     }
 
-    /*public List<Salle> findByDate(LocalDate date){
-        System.out.println(date);
-        return this.repository.findByDate(date);
-    }*/
+
 }
