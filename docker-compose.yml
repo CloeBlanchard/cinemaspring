@@ -1,0 +1,12 @@
+services:
+  mysql:
+    image: mysql:8
+    ports:
+      - "3307:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: cinema
+  adminer:
+    image: adminer
+    ports:
+      - "9000:8080"

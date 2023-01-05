@@ -1,0 +1,42 @@
+@startuml
+
+class Film {
+    - id: Long
+    - titre: String
+    - annee: int
+    - duree: int
+    - resume: String
+    - acteurs: List<Acteur>
+    - realisateurs: List<Realisateur>
+}
+
+class Séance {
+    - id: Long
+    - film: Film
+    - salle: Salle
+    - date: Date
+    - placesDisponibles: int
+    - prix: float
+}
+
+class Salle {
+    - id: Long
+    - numero: int
+    - capacite: int
+    - equipements: List<String>
+}
+
+class Ticket {
+    - id: Long
+    - seance: Séance
+    - nomClient: String
+    - nombrePlaces: int
+}
+
+Film "1" -- "0..*" Séance
+Salle "1" -- "0..*" Séance
+Séance "1" -- "0..*" Ticket
+Realisateur "0..*" -- "0..*" Film
+Acteur "0..*" -- "0..*" Film
+
+@enduml
