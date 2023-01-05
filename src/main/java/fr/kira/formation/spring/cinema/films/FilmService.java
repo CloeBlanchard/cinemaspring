@@ -159,10 +159,7 @@ public class FilmService {
         jpaRepository.save(film);
     }
 
-    public List<Film> findByDate(LocalDate date) {
-        System.out.println(date);
-        System.out.println(jpaRepository.findAll().get(1).getDateSortie());
-        System.out.println(jpaRepository.findByDateSortie(date));
-        return jpaRepository.findByDateSortie(date);
+    public  List<Film> findByDate(LocalDate date){
+        return this.jpaRepository.findByDate(date);
     }
 }
